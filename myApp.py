@@ -78,7 +78,7 @@ def render_todo_item(index, item, filter_name):
     with st.container():
         # --- 수정 모드일 때 ---
         if st.session_state[edit_key]:
-            with st.form(key=f"edit_form_{index}"):
+            with st.form(key=f"edit_form_{filter_name}_{index}"):
                 edit_desc = st.text_input("할 일 수정", value=item['description'])
                 e_c1, e_c2 = st.columns(2)
                 edit_date = e_c1.date_input("기한", value=item_date)
